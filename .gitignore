@@ -1,1 +1,106 @@
 .env.local
+
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Diretório do ambiente
+.env
+
+# Banco de dados local
+*.db
+*.sqlite
+
+# Dependências de módulos
+node_modules/
+
+# Build de produção
+dist/
+build/
+
+# Diretórios de arquivos temporários
+tmp/
+temp/
+
+# Arquivos de sistema operacional
+.DS_Store
+Thumbs.db
+
+# Configurações de IDEs e editores de código
+.vscode/
+.idea/
+
+# Cache de testes
+coverage/
+.nyc_output/
+
+# Arquivos temporários específicos do sistema operacional
+*.swp
+*.swo
+
+# Ignorar arquivos de configuração pessoal
+*.env.local
+*.env.*.local
+
+# Diretórios específicos de deploy
+.deploy/
+.deploy_*
+
+# Certificados SSL locais
+*.pem
+
+# Logs de PM2
+pm2*.log
+
+# Arquivos de debug e crash
+*.pid
+*.seed
+*.seed.*
+
+# Ignorar arquivos de lock de pacotes
+package-lock.json
+yarn.lock
+.pnpm-debug.log
+
+# Artefatos de arquivos de configuração de deploy (ex: Docker, Kubernetes)
+docker-compose.override.yml
+docker-compose.prod.yml
+*.dockerfile
+
+# Configurações do ESLint
+.eslintcache
+
+# Configurações de Prettier
+.prettierignore
+.prettierrc
+.prettierrc.*
+
+# Configurações de editorconfig
+.editorconfig
+
+# Ignorar pastas e arquivos de teste
+test/
+tests/
+*.test.js
+*.spec.js
+*.test.ts
+*.spec.ts
+
+# Ignorar dumps de banco de dados
+*.sql
+*.sql.gz
+
+# Ignorar arquivos gerados pelo sistema de controle de versão
+.svn/
+.hg/
+.gitattributes
+
+# Ignorar arquivos de configuração de contêineres (ex: Docker, Kubernetes)
+.dockerignore
+.jenkinsfile
+.kubernetes
+
+# Arquivos de chave SSH (nunca versionar chaves privadas)
+*.pub
+*.key
