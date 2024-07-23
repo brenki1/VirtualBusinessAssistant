@@ -46,7 +46,7 @@ Contribuições são bem-vindas! Se você deseja contribuir para o projeto, siga
 
 ## Licença
 
-Este projeto é licenciado sob a [MIT License](LICENSE).
+Este projeto é licenciado sob a [GNU License](LICENSE).
 
 ## Contato
 
