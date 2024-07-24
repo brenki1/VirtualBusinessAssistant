@@ -7,7 +7,7 @@ O **Assistente Virtual de Negócios** é uma aplicação inovadora projetada par
 ## Tecnologias Utilizadas
 
 - **Backend**: 
-  - [Spring Boot](https://spring.io/projects/spring-boot) - Framework Java para criação de aplicativos web robustos e escaláveis.
+  - [Node.js](https://nodejs.org/) - Ambiente de execução JavaScript baseado no motor V8 do Google Chrome, projetado para criar servidores e aplicações web eficientes e escaláveis.
   - [MySQL](https://www.mysql.com/) - Sistema de gerenciamento de banco de dados relacional para armazenar e gerenciar dados empresariais.
 
 - **Frontend**:
