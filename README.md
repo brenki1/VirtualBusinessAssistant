@@ -50,7 +50,7 @@ Este projeto é licenciado sob a [GNU License](LICENSE).
 
 ## Contato
 
-Para mais informações, entre em contato com [seu e-mail] ou abra uma issue no [repositório do GitHub](URL_DO_REPOSITORIO).
+Para mais informações, entre em contato com [seu e-mail] ou abra uma issue no [repositório do GitHub](https://github.com/brenki1/VirtualBusinessAssistant).
 
 ---
 
