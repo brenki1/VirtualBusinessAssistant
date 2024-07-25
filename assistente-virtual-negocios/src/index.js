@@ -13,18 +13,19 @@ const rl = readline.createInterface({
 
 async function conversar() {
 
-    const model = genAI.getGenerativeModel({model: "gemini-1.5-pro" });
+    const model = genAI.getGenerativeModel({ model: "gemini-1.5-pro" });
 
     const chat = model.startChat({
         history: [],
         generationConfig: {
-            maxOutputTokens:5000,
+            maxOutputTokens: 5000,
         },
     });
 
     async function askAndRespond() {
         rl.question("You: ", async (msg) => {
-            if(msg.toLowerCase === "exit") {
+            if (msg.toLowerCase() === "exit") {
+                console.log("Obrigado pela conversa!");
                 rl.close();
             } else {
                 const result = await chat.sendMessage(msg);
@@ -43,7 +44,7 @@ conversar();
 
 async function teste() {
 
-    const model = genAI.getGenerativeModel({model: "gemini-1.5-pro" });
+    const model = genAI.getGenerativeModel({ model: "gemini-1.5-pro" });
 
     const prompt = "Write a brief text about programming languages, and point out which ones are the best for beginners and which ones are the most advanced."
     const result = await model.generateContent(prompt);
@@ -54,7 +55,7 @@ async function teste() {
 
 async function teste2() {
 
-    const model = genAI.getGenerativeModel({model: "gemini-1.5-pro" });
+    const model = genAI.getGenerativeModel({ model: "gemini-1.5-pro" });
 
     const prompt = "Write a text about the best beginner linux distros."
     const result = await model.generateContent(prompt);
