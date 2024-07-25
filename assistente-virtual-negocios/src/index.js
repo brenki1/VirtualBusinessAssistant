@@ -18,7 +18,7 @@ async function conversar() {
     const chat = model.startChat({
         history: [],
         generationConfig: {
-            maxOutputTokens:500,
+            maxOutputTokens:5000,
         },
     });
 
