@@ -1,6 +1,13 @@
-* {
-    padding: 0;
-    margin: 0;
+ /* Variables */
+ :root {
+    --c-dark: #2c2c2c; /* Cinza dark */
+    --c-brand:  #fbff00; /*  para elementos de marca */
+    --c-brand-light: #1900ff; /*  para variações suaves */
+    --c-brand-rgb: 0, 0, 0; /* RGB correspondente */
+    --c-body: #1c1c1c; /* Cinza para texto e elementos gerais */
+    --font-base: 'JetBrains Mono', sans-serif;
+    --box-shadow: 0px 15px 25px rgba(0,0,0,0.08);
+    --transition: all 0.5s ease;
 }
 
 body {
@@ -78,4 +85,83 @@ p {
     color: rgb(246, 246, 246);
     margin-right: 0.5rem; /* Valor padrão do Bootstrap para "2" */
     text-decoration: none; /* Remove link underline */
+}
+
+
+/* Navbar customs */
+
+.navbar {
+    box-shadow: var(--box-shadow);
+    background-color: white; /* Config 1 */
+    background-color: rgba(var(--c-brand-rgb), 0.997); /* Config 2 */
+}
+
+.navbar-nav .nav-link {
+    font-weight: 600;
+    color: var(--c-brand); /* Config 1 */
+    position: relative; /* Para posicionar o pseudo-elemento */
+    transition: color 0.3s ease; /* Transição suave da cor do texto */
+    margin-right: 20px; /* Adiciona margem entre os itens de navegação */
+}
+
+.navbar-nav .nav-link::after {
+    content: ''; /* Criando um pseudo-elemento para a barra */
+    position: absolute;
+    bottom: -2px; /* Distância da barra em relação ao texto */
+    left: 0;
+    width: 100%;
+    height: 2px; /* Espessura da barra */
+    background-color: transparent; /* Cor inicial da barra (transparente) */
+    transition: background-color 0.3s ease; /* Transição suave da cor de fundo */
+}
+
+.navbar-nav .nav-link:hover {
+    color: var(--c-dark); /* Cor do texto ao passar o mouse */ /* Config 1 */
+}
+
+.navbar-nav .nav-link:hover::after {
+    background-color: var(--c-brand-light); /* Cor da barra ao passar o mouse */
+}
+
+.navbar-nav .nav-link.active {
+    color: var(--c-brand);
+}
+
+/* Estilizar o botão de menu (navbar-toggler) */
+.navbar-toggler {
+   
+    border-color: var(--c-dark);
+    background-color: var(--c-brand);
+}
+
+.navbar-toggler.custom-toggler .navbar-toggler-icon {
+   /* background-image: url('data:image/svg+xml;charset=utf8,%3Csvg viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath stroke="rgba%2842, 45, 50, 1%29" stroke-width="2" stroke-linecap="round" stroke-miterlimit="10" d="M4 7h22M4 15h22M4 23h22"/%3E%3C/svg%3E');
+     Customize as cores e o ícone conforme necessário */
+    width: 30px;
+    height: 30px;
+}
+
+.btn {
+    font-weight: 550;
+    font-size: 15px;
+    text-transform: uppercase;
+    border-radius: 0;
+    padding: 10px 24px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-brand {
+    background-color: var(--c-brand);
+    border-color: var(--c-brand);
+    color: white;
+    transition: var(--transition);
+    margin-right: 0.5rem; /* Valor padrão do Bootstrap para "2" */
+}
+
+.btn-brand:hover {
+    background-color: var(--c-brand-light);
+    border-color: var(--c-brand-light);
+    color: var(--c-dark);
 }
