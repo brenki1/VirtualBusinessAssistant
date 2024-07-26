@@ -2,6 +2,7 @@
 logs
 *.log
 npm-debug.log*
+chatLog.txt
 
 # Diretório do ambiente
 .env
