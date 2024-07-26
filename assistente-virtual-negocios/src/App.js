@@ -40,14 +40,14 @@ const App = () => {
       console.log(data)
       setChatHistory(oldChatHistory => [...oldChatHistory, {
         role: "user",
-        parts: value
+        parts: [{text:value}],
       },
       {
         role: "model",
-        parts: data
-      }
+        parts: [{text:data}],
+      },
 
-      ])
+      ]);
       setValue("")
 
     } catch (error) {
@@ -81,7 +81,7 @@ const App = () => {
       {error && <p>{error}</p>}
       <div className="search-result">
         {chatHistory.map((chatItem, _index) => <div key={_index}>
-          <p className="answer">{chatItem.role} : {chatItem.parts}</p>
+          <p className="answer">{chatItem.role} : {chatItem.parts[0].text}</p>
         </div>)}
       </div>
     </div>
