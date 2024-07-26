@@ -1,15 +1,20 @@
-import dotenv from "dotenv"
+import dotenv, { configDotenv } from "dotenv"
 import { GoogleGenerativeAI } from "@google/generative-ai"
 import readline from "readline"
 dotenv.config();
 import fs from "fs";
+import { error } from "console";
+import oldLog from "./chatLog.json" with { type: "json" };
+
 
 const genAI = new GoogleGenerativeAI(process.env.API_KEY);
+
 
 const rl = readline.createInterface({
     input: process.stdin,
     output: process.stdout,
 });
+
 
 async function conversar() {
 
@@ -20,11 +25,10 @@ async function conversar() {
      + "Write in a positive, assertive and upbeat tone." +
      "Ignore everything that's not related to business"
     });
-
+    
+    //console.log(oldLog);
     const chat = model.startChat({
-        history: fs.open("chatLog.txt", "r", function (err, file) {
-            if(err) throw err;
-        }),
+        history: oldLog,
         generationConfig: {
             maxOutputTokens: 500,
         },
@@ -33,9 +37,9 @@ async function conversar() {
         rl.question("You: ", async (msg) => {
             if (msg.toLowerCase() === "exit") {
                 var historico = await chat.getHistory();
-                //console.log("Obrigado pela conversa! Aqui esta nosso historico de conversa: \n", historico);
+                console.log("Feliz em ajudar, até a próxima! :)");
                 fs.writeFile(
-                    "chatLog.txt",
+                    "chatLog.json",
                     JSON.stringify(historico),
                     function (err){
                         if(err) console.error("algo deu errado!");
